@@ -41,25 +41,29 @@
     <link type="text/css" href="CSS/bootstrap.min.css" rel="stylesheet" />--%>
 </head>
 <body class="size-1140 overflow">
+    <div class="shadow"></div>
     <form id="form1" runat="server">
+
         <div class="boxCode width53" style="display:none;">
             <i class="fa fa-times close" aria-hidden="true"></i>
-      
-                <label for="TextBox1" class=" display-block font14 marginBottom5 marginTop10p textWhite left5p">Code</label>
-                <asp:TextBox ID="TextBox1" TabIndex="1" runat="server" class="enter display-block marginBottom15 input width187"></asp:TextBox>
-                <asp:Button ID="Button1" runat="server" Text="Submit" OnClick="Button1_Click" class="button width187" />
-      
+                <label for="TextBox1" class="inlineBlock width82 font14 marginBottom5 marginTop5p textWhite marginLeft5">Code</label>
+                <asp:TextBox ID="TextBox1" TabIndex="1" runat="server" class="enter marginLeft5 marginBottom15 top7 input width187"></asp:TextBox>
+                <div class="paddingLeft5p marginTop20">
+                    <asp:Button ID="Button1" runat="server" Text="Submit" OnClick="Button1_Click" class="button width30 centerDiv inlineBlock" />
+                </div>
         </div>
         <div class="boxPass width53">
             <i class="fa fa-times close" aria-hidden="true"></i>
         
-            <label for="TextBox2" class="display-block font14 marginBottom5 marginTop5p textWhite left5p">Old Password</label>
-            <asp:TextBox ID="TextBox2" type ="password" TabIndex="1" runat="server" class=" enter display-block marginBottom15 input width187"></asp:TextBox>
-            <label for="TextBox3" class="display-block font14 marginBottom5 textWhite left5p">New Password</label>
-            <asp:TextBox ID="TextBox3" type ="password" TabIndex="1" runat="server" class="enter display-block marginBottom15 input width187"></asp:TextBox>
-            <label for="TextBox4" class="display-block font14 marginBottom5 textWhite left5p">Confirm New Password</label>
-            <asp:TextBox ID="TextBox4" type ="password" TabIndex="1" runat="server" class=" enter display-block marginBottom15 input width187"></asp:TextBox>
-            <asp:Button ID="Button2" runat="server" Text="Submit" OnClick="Button2_Click" class="button width187" />
+            <label for="TextBox2" class="inlineBlock width82 font14 marginBottom5 marginTop5p textWhite marginLeft5">Old Password</label>
+            <asp:TextBox ID="TextBox2" type ="password" TabIndex="1" runat="server" class="enter marginLeft5 marginBottom15 top7 input width187"></asp:TextBox>
+            <label for="TextBox3" class="inlineBlock width82 font14 marginBottom5 marginTop5p textWhite marginLeft5">New Password</label>
+            <asp:TextBox ID="TextBox3" type ="password" TabIndex="1" runat="server" class="enter marginLeft5 marginBottom15 top7 input width187"></asp:TextBox>
+            <label for="TextBox4" class="inlineBlock width82 font14 marginBottom5 marginTop5p textWhite marginLeft5">Confirm New Password</label>
+            <asp:TextBox ID="TextBox4" type ="password" TabIndex="1" runat="server" class="enter marginLeft5 marginBottom15 top7 input width187"></asp:TextBox>
+            <div class="paddingLeft5p marginTop20">
+                <asp:Button ID="Button2" runat="server" Text="Submit" OnClick="Button2_Click" class="button width30 centerDiv inlineBlock" />
+            </div>
         </div>
 
          <div class="boxShow width53">
@@ -76,7 +80,50 @@
             <label for="TextBox2" id ="19" class="display-block font14 marginBottom14 marginTop5p textWhite left5p">Description: </label>
             <label for="TextBox3" id ="20" class="display-block font14 marginBottom14 textWhite left5p">Comment: </label>
             <label for="TextBox3" id ="21" class="display-block font14 marginBottom14 textWhite left5p">Date: </label>
-            
+        </div>
+
+        <div class="boxSearch width53">
+            <i class="fa fa-times close" aria-hidden="true"></i>
+            <div style= "display :none;" class="error up upStyle"></div>
+            <div class="display-block">
+                <div>
+                    <label id ="Laglo" for="TextBox1" class="inlineBlock width82 font14 marginBottom5 marginTop5p textWhite marginLeft5">AWB:</label>
+                    <asp:TextBox ID="TextBox14" TabIndex="1" runat="server" class="enter marginLeft5 marginBottom15 top7 input width187"></asp:TextBox>
+                </div>
+                <div>
+                    <br /><label for="TextBox5" class="inlineBlock width82 font14 marginBottom5 marginTop5p textWhite marginLeft5">Name:</label>
+                    <asp:TextBox ID="TextBox15" TabIndex="2" runat="server" class="enter marginLeft5 marginBottom15 top7 input width187"></asp:TextBox>
+                </div>
+                <div>
+                    <br /><label for="TextBox7" class="inlineBlock width82 font14 marginBottom5 textWhite marginLeft5">Status:</label>
+                   <asp:DropDownList ID="TextBox17" type="number" TabIndex="3" runat="server" class="enter marginLeft5 marginBottom15 top7 input width187">
+                <asp:ListItem Selected="False" Value=""></asp:ListItem>
+                <asp:ListItem Selected="False" Value="Preparing for Shipment">Preparing for Shipment</asp:ListItem>
+                <asp:ListItem Selected="False" Value="Shipped">Shipped</asp:ListItem>
+                <asp:ListItem Selected="False" Value="Delivered">Delivered</asp:ListItem>
+                <asp:ListItem Selected="False" Value="Processing items">Processing items</asp:ListItem>
+                <asp:ListItem Selected="False" Value="failed">failed</asp:ListItem>
+                <asp:ListItem Selected="False" Value="Client didn’t answer">Client didn’t answer</asp:ListItem>
+                <asp:ListItem Selected="False" Value="Client rescheduled">Client rescheduled</asp:ListItem>
+                <asp:ListItem Selected="False" Value="Canceled">Canceled</asp:ListItem>
+                    </asp:DropDownList>
+                </div>
+                 <div>
+                    <br /><label for="TextBox8" class="inlineBlock width82 font14 marginBottom5 textWhite marginLeft5">Company Name:</label>
+                    <asp:TextBox ID="TextBox5" TabIndex="5" runat="server" class="enter marginLeft5 marginBottom15 top7 input width187"></asp:TextBox>
+                </div>
+                <div>
+                    <br /><label for="TextBox8" class="inlineBlock width82 font14 marginBottom5 textWhite marginLeft5">Date from:</label>
+                    <asp:TextBox ID="TextBox18" type="date" TabIndex="4" runat="server" class="enter marginLeft5 marginBottom15 top7 input width187"></asp:TextBox>
+                </div>
+                <div>
+                    <br /><label for="TextBox8" class="inlineBlock width82 font14 marginBottom5 textWhite marginLeft5">Date to:</label>
+                    <asp:TextBox ID="TextBox16" type="date" TabIndex="5" runat="server" class="enter marginLeft5 marginBottom15 top7 input width187"></asp:TextBox>
+                </div>
+            </div>
+                <div class="paddingLeft5p marginTop20">
+                    <input id="Button4" type="button"  value="Submit"  class="button width30 centerDiv inlineBlock" />
+                </div>
         </div>
    
 
@@ -85,15 +132,19 @@
       <!-- Top Bar -->
       <div class="top-bar background-white">
         <div class="line">
-         <%-- <div class="s-12 m-6 l-6">
+       <%--   <div class="s-12 m-6 l-6">
             <div class="top-bar-contact">
-              <p class="text-size-12">Contact Us: 01019267245  | <a class="text-orange-hover" href="mailto:loadbugs@gmail.com">loadbugs@gmail.com</a></p>
+              <p class="text-size-12">Contact Us: 01019267245 | <a class="text-orange-hover" href="mailto:loadbugs@gmail.com">loadbugs@gmail.com</a></p>
             </div>
           </div>--%>
-          <div class="s-12 m-7 l-7">
-            <div class="right">
-                <asp:Button ID="Button4" class="right pointer signout" runat="server" OnClick="Button4_Click"  Text="SignOut" />
-              <ul class="top-bar-social right">
+          
+
+          <div class="s-0 m-4 l-4">
+            <div style="width:100%;"><br /></div>
+          </div>
+            
+          <div class="s-4 m-4 l-4">
+            <ul class="top-bar-social">
                <li><a href="contact.aspx" target='_blank'><i class="icon-smartphone hoverBlack"  title="01019267245"></i></a> </li>
                                                                                    <li><a href="contact.aspx" target='_blank'><i class="icon-mail" style ="color: orange !important"  title="loadbugs@gmail.com"></i></a> </li>
 
@@ -102,7 +153,12 @@
                 <li><a href="https://www.instagram.com/loadbugs/" target='_blank'><i class="icon-instagram hoverBlack" title="Instagram"></i></a> </li>
                                                     <li><a href="https://twitter.com/loadbugs" target='_blank'><i class="icon-twitter" style ="color: #0084b4 !important" title="twitter"></i></a> </li>
                    <li><a href="" target='_blank'><i class="icon-linked_in " style ="color: #0077B5 !important"  title="LinkedIn"></i></a> </li>
+
               </ul>
+          </div>
+          <div class="s-8 m-4 l-4 floatRight">
+            <div class="right">
+                <asp:Button ID="Button6" CssClass="right signout pointer" runat="server" OnClick="Button4_Click" Text="SignOut" />
             </div>
           </div>
         </div>
@@ -112,28 +168,33 @@
       <nav class="background-white background-primary-hightlight">
         <div class="line">
           <div class="s-12 l-2 logofont">
-             <a href="" class="logo"><img src="img1/loggg.png" alt=""></a>
-             
+             <a href="" class="logo"><img src="img/logo.jpg" alt=""></a>
           </div>
-          <div class="top-nav s-12 l-10">
+          <div class="top-nav s-12 l-10 topNavVAlgin">
             <p class="nav-text"></p>
             <ul class="right chevron">
               <li><a href="/" class="marginLeft2">Home</a></li>
               <li><a href="contact.aspx" class="marginLeft2">Contact Us</a></li>
               <li><a href="about.aspx" class="marginLeft2">About</a></li>
-              <li><a runat="server" id="account" href="Login.aspx" class="marginLeft2">Order</a></li>
+              <li><a runat="server" id="account" href="Login.aspx" class="marginLeft2 active">Order</a></li>
             </ul>
           </div>
         </div>
+           
       </nav>
     </header>
-      <div>
-        <input id="search" class="reset-this abbc left3 marginTop10" type="text" placeholder="Search"/>
-        <button type="button" class="reset-this left3 marginTop10 pointer" style="color: black; background-color: transparent;" id="bttn" ><i class="fa fa-search marginTop10 green" aria-hidden="true"></i></button>
-    </div>
+      
      <div>
         <br />
         <div id="mimi" class="hamada" style="height: 390px; max-width: 1200px; " >
+            <div class="position-relative height65">
+                <div>
+                    <div class="centerDiv" style="height: 40px; width: 194px;">
+                        <input id="search" class="reset-this abbc" type="text" placeholder="Search"/>
+                        <button type="button" class="reset-thispointer" style="color: black; background-color: transparent;" id="searchBtn" ><i class="fa fa-search marginTop10 green" aria-hidden="true"></i></button>
+                    </div>
+                </div>
+            </div>
             <table id="list" style="overflow-x: auto;">
                 <tr>
                     <td />
@@ -158,7 +219,7 @@
          <div id="pager2"></div>
     </div>
     
-    <footer class="alignLeft darkBlue textWhite bar">
+    <footer class="alignLeft darkBlue textWhite bar" style="position: relative;top: 50px;">
         <div class="inlineBlock height56 verAlign width30p center marginLeft2p position-relative">
             <asp:Button ID="Button3" OnClick="Button3_Click" class="pointer"  runat="server" Text="Download"/> </div>
         
@@ -182,33 +243,33 @@
              });
              $("#<%=Button2.ClientID %>").click(function () {
                  if ($("#<%=TextBox2.ClientID %>").val() == "" || $("#<%=TextBox3.ClientID %>").val() == "" || $("#<%=TextBox4.ClientID %>").val() == "") {
-                    return false;
-                }
-                else if ($("#<%=TextBox4.ClientID %>").val() != $("#<%=TextBox3.ClientID %>").val()) {
-                    // (document.getElementById("passchange")).style.visibility = "visible";
-                    return false;
-                }
-                else return true;
-            });
+                     return false;
+                 }
+                 else if ($("#<%=TextBox4.ClientID %>").val() != $("#<%=TextBox3.ClientID %>").val()) {
+                     // (document.getElementById("passchange")).style.visibility = "visible";
+                     return false;
+                 }
+                 else return true;
+             });
          });
          </script>
       <script type="text/javascript">
           var yyy = "eloss";
           var lll = "";
           function add(x) {
-              
-              var data = $("#list").jqGrid('getRowData', x);
-              $("#11").text("Company Name: "+data.Expense1);
-              $("#12").text("Name: "+data.name);
-              $("#13").text("Phone: "+data.phone);
-              $("#14").text("Address: "+data.address);
-              $("#15").text("Status: "+data.M1);
-              $("#16").text("Ship amount: "+data.samount);
-              $("#17").text("Company amount: "+data.camount);
 
-              $("#18").text("Amount: "+data.amount);
-              $("#19").text("Description: "+data.description);
-              $("#20").text("Comment: "+data.comment);
+              var data = $("#list").jqGrid('getRowData', x);
+              $("#11").text("Company Name: " + data.Expense1);
+              $("#12").text("Name: " + data.name);
+              $("#13").text("Phone: " + data.phone);
+              $("#14").text("Address: " + data.address);
+              $("#15").text("Status: " + data.M1);
+              $("#16").text("Ship amount: " + data.samount);
+              $("#17").text("Company amount: " + data.camount);
+
+              $("#18").text("Amount: " + data.amount);
+              $("#19").text("Description: " + data.description);
+              $("#20").text("Comment: " + data.comment);
               $("#21").text("Date: " + data.date);
               $(".boxShow").show();
 
@@ -234,6 +295,7 @@
               }
           }
           jQuery(document).ready(function () {
+
               $("#options").click(function () {
                   $("#sidebar-wrapper").toggle();
               });
@@ -245,320 +307,332 @@
 
 
               $("#<%=Button3.ClientID %>").click(function () {
-                 
-                  $("#<%=Label1.ClientID %>").val(""+name);
-                 
-           
-                    return true;
-
-                });
-
-
-
-
-
-            var id = 0;
-            var name = "";
-            var choice = "";
-            $("#osos").hide();
-            //$(window).on("resize", function () {
-            //    var $grid = $("#list"),
-            //        newWidth = $grid.closest(".ui-jqgrid").parent().width();
-            //    $grid.jqGrid("setGridWidth", newWidth, true);
-            //});
-            $("#bttn").click(function () {
-                name = $("#search").val();
-                if (id == 0) {
-                    $("#list").setGridParam({ postData: { id: id, name: name, u: choice } });
-                    $("#list").trigger("reloadGrid");
-                } else {
-                    $("#list2").setGridParam({ postData: { id: id, name: name } });
-                    $("#list2").trigger("reloadGrid");
-
-                }
-            });
-            $('.abbc').keydown(function (e) {
-                if (e.keyCode == 13) {
-                    name = $("#search").val();
-                    if (id == 0) {
-                        $("#list").setGridParam({ postData: { id: id, name: name, u: choice } });
-                        $("#list").trigger("reloadGrid");
-                    } else {
-                        $("#list2").setGridParam({ postData: { id: id, name: name } });
-                        $("#list2").trigger("reloadGrid");
-
-                    }
-                    return false;
-                }
-            });
-            $('.enter').keydown(function (e) {
-                if (e.keyCode == 13) {
-                    return false;
-                }
-            });
-            $(".bttn").click(function () {
-
-                $("#mimi").hide();
-                $("#osos").show();
-                id = 1;
-                $("#list2").setGridParam({ postData: { id: id, name: name } });
-                $("#list2").trigger("reloadGrid");
-
-
-            });
-            $(".kolo3alakolo").click(function () {
-                $("#osos").hide();
-                $("#mimi").show();
-                id = 0;
-                choice = "";
-                $("#list").setGridParam({ postData: { id: id, name: name, u: "" } });
-                $("#list").trigger("reloadGrid");
-
-            });
-
-            var ReasonTerm = "Preparing for Shipment:Preparing for Shipment;Shipped:Shipped;Delivered:Delivered;Processing items:Processing items;failed:failed";
-            var grid = $("#list");
-            grid.jqGrid({
-                datatype: "json",
-                mtype: 'POST',
-                postData: { id: id, name: name, u: choice },
-                url: 'WebService.asmx/get_rows',
-                colNames: ['*', 'ID','AWB','user', 'CompanyName ', 'name', 'phone', 'address', 'status', 'ship_amount', 'company_amount', 'amount', 'description', 'comment','Date', 'show', 'print'],
-                colModel: [
-                     { name: 'new', index: 'new', width: 20 },
-       { name: 'id', index: 'id', width: 60, sorttype: "int", Key: true, hidden: true },
-       { name: 'ido', index: 'ido', width: 60 },
-       { name: 'Month', index: 'Month', width: 100, hidden: true },
-      
-              { name: 'Expense1', index: 'Expense1', width: 100 },
-
-
- { name: 'name', index: 'name', width: 80, align: "center", sorttype: "float", editable: true },
-            { name: 'phone', index: 'phone', width: 100, align: "center", sorttype: "float", editrules: { number: true }, editable: true },
-             { name: 'address', index: 'address', width: 80, align: "center", sorttype: "float", editable: true },
-            { name: 'M1', index: 'M1', width: 140, align: "center", sorttype: "float", editable: true, edittype: 'select', editoptions: { value: ReasonTerm } },
-       { name: 'samount', index: 'samount', width: 80, align: "center", sorttype: "float" },
-        { name: 'camount', index: 'camount', width: 80, align: "center", sorttype: "float" },
-            { name: 'amount', index: 'amount', width: 80, align: "center", sorttype: "float", editrules: { number: true }, editable: true },
-            { name: 'description', index: 'description', width: 100 },
-
-            { name: 'comment', index: 'comment', width: 80, align: "center", sorttype: "float", editable: true },
-                { name: 'date', index: 'date', width: 80, align: "center", sorttype: "float" },
-            { name: 'show', index: 'show', width: 40, align: "center", sorttype: "float", hidden: true },
-                        { name: 'print', index: 'print', width: 60, align: "center", sorttype: "float" },
-
-                ],
-                'cellEdit': true,
-                'cellsubmit': 'remote',
-                cellurl: 'WebService.asmx/edit_F',
-                afterSaveCell: function (rowid, celname, value, iRow, iCol) {
 
-                    setTimeout(function () { $("#list").trigger("reloadGrid"); }, 1000);
-
-                },
-                onCellSelect: function (rowid, celname, value, iRow, iCol) {
-                    var data = $("#list").jqGrid('getRowData',rowid);
-                    if(data.new == "*")
-                    {
-                        data.new = "";
-                        $('#list').jqGrid('setRowData', rowid, data);
-                        $.ajax({
-                            method: "POST",
-                            data: { id: rowid.toString() },
-                            url: 'WebService.asmx/done'
-                           
+                  $("#<%=Label1.ClientID %>").val("" + name);
+
+
+                  return true;
+
+              });
+
+
+
+
+
+              var id = 0;
+              var name = "";
+              var choice = "";
+              $("#osos").hide();
+              //$(window).on("resize", function () {
+              //    var $grid = $("#list"),
+              //        newWidth = $grid.closest(".ui-jqgrid").parent().width();
+              //    $grid.jqGrid("setGridWidth", newWidth, true);
+              //});
+              $("#Button4").click(function () {
+                  $("#list").setGridParam({
+                      postData: { id: id, name: $("#<%=TextBox5.ClientID %>").val(), u: choice, awb: $("#<%=TextBox14.ClientID %>").val(), uname: $("#<%=TextBox15.ClientID %>").val(), status: $("#<%=TextBox17.ClientID %>").val(), datef: $("#<%=TextBox18.ClientID %>").val(), datet: $("#<%=TextBox16.ClientID %>").val() }
+                  });
+                  $(".boxSearch").hide();
+                  $(".shadow").hide();
+                  $("#<%=TextBox16.ClientID %>").val("");
+                  $("#<%=TextBox17.ClientID %>").val("");
+                  $("#<%=TextBox18.ClientID %>").val("");
+                  $("#<%=TextBox15.ClientID %>").val("");
+                  $("#<%=TextBox14.ClientID %>").val("");
+                  $("#list").trigger("reloadGrid");
+               
+              });
+              $("#bttn").click(function () {
+                  name = $("#search").val();
+                  if (id == 0) {
+                      $("#list").setGridParam({ postData: { id: id, name: name, u: choice } });
+                      $("#list").trigger("reloadGrid");
+                  } else {
+                      $("#list2").setGridParam({ postData: { id: id, name: name } });
+                      $("#list2").trigger("reloadGrid");
+
+                  }
+              });
+              $('.abbc').keydown(function (e) {
+                  if (e.keyCode == 13) {
+                      name = $("#search").val();
+                      if (id == 0) {
+                          $("#list").setGridParam({ postData: { id: id, name: name, u: choice } });
+                          $("#list").trigger("reloadGrid");
+                      } else {
+                          $("#list2").setGridParam({ postData: { id: id, name: name } });
+                          $("#list2").trigger("reloadGrid");
+
+                      }
+                      return false;
+                  }
+              });
+              $('.enter').keydown(function (e) {
+                  if (e.keyCode == 13) {
+                      return false;
+                  }
+              });
+              $(".bttn").click(function () {
+
+                  $("#mimi").hide();
+                  $("#osos").show();
+                  id = 1;
+                  $("#list2").setGridParam({ postData: { id: id, name: name } });
+                  $("#list2").trigger("reloadGrid");
+
+
+              });
+              $(".kolo3alakolo").click(function () {
+                  $("#osos").hide();
+                  $("#mimi").show();
+                  id = 0;
+                  choice = "";
+                  $("#list").setGridParam({ postData: { id: id, name: name, u: "" } });
+                  $("#list").trigger("reloadGrid");
+
+              });
+
+              var ReasonTerm = "Processing Items:Processing Items;Preparing For Shipment:Preparing For Shipment;Shipped:Shipped;Delivered:Delivered;Failed:Failed;Client didn’t answer:Client didn’t answer;Client rescheduled:Client rescheduled;Canceled:Canceled"; var grid = $("#list");
+              grid.jqGrid({
+                  datatype: "json",
+                  mtype: 'POST',
+                  postData: { id: id, name: name, u: choice ,awb: $("#<%=TextBox14.ClientID %>").val(), uname: $("#<%=TextBox15.ClientID %>").val(), status: $("#<%=TextBox17.ClientID %>").val(), datef: $("#<%=TextBox18.ClientID %>").val(), datet: $("#<%=TextBox16.ClientID %>").val()},
+                  url: 'WebService.asmx/get_rows',
+                  colNames: ['*', 'ID', 'AWB', 'user', 'CompanyName ', 'name', 'phone', 'address', 'status', 'ship_amount', 'company_amount', 'amount', 'description', 'comment', 'Date', 'show', 'print'],
+                  colModel: [
+                       { name: 'new', index: 'new', width: 20 },
+         { name: 'id', index: 'id', width: 60, sorttype: "int", Key: true, hidden: true },
+         { name: 'ido', index: 'ido', width: 60 },
+         { name: 'Month', index: 'Month', width: 100, hidden: true },
+
+                { name: 'Expense1', index: 'Expense1', width: 100 },
+
+
+   { name: 'name', index: 'name', width: 80, align: "center", sorttype: "float", editable: true },
+              { name: 'phone', index: 'phone', width: 100, align: "center", sorttype: "float", editrules: { number: true }, editable: true },
+               { name: 'address', index: 'address', width: 80, align: "center", sorttype: "float", editable: true },
+              { name: 'M1', index: 'M1', width: 140, align: "center", sorttype: "float", editable: true, edittype: 'select', editoptions: { value: ReasonTerm } },
+         { name: 'samount', index: 'samount', width: 80, align: "center", sorttype: "float" },
+          { name: 'camount', index: 'camount', width: 80, align: "center", sorttype: "float" },
+              { name: 'amount', index: 'amount', width: 80, align: "center", sorttype: "float", editrules: { number: true }, editable: true },
+              { name: 'description', index: 'description', width: 100 },
 
-                        });
-                    }
+              { name: 'comment', index: 'comment', width: 80, align: "center", sorttype: "float", editable: true },
+                  { name: 'date', index: 'date', width: 80, align: "center", sorttype: "float" },
+              { name: 'show', index: 'show', width: 40, align: "center", sorttype: "float", hidden: true },
+                          { name: 'print', index: 'print', width: 60, align: "center", sorttype: "float" },
 
-                },
+                  ],
+                  'cellEdit': true,
+                  'cellsubmit': 'remote',
+                  cellurl: 'WebService.asmx/edit_F',
+                  afterSaveCell: function (rowid, celname, value, iRow, iCol) {
 
+                      setTimeout(function () { $("#list").trigger("reloadGrid"); }, 1000);
+
+                  },
+                  onCellSelect: function (rowid, celname, value, iRow, iCol) {
+                      var data = $("#list").jqGrid('getRowData', rowid);
+                      if (data.new == "*") {
+                          data.new = "";
+                          $('#list').jqGrid('setRowData', rowid, data);
+                          $.ajax({
+                              method: "POST",
+                              data: { id: rowid.toString() },
+                              url: 'WebService.asmx/done'
 
 
+                          });
+                      }
 
+                  },
 
 
-                headertitles: true,
 
-                pager: '#pager',
-                sortname: 'id',
-                multiselect: true,
-                rowNum: 9999,
-                viewrecords: false,
-                pgbuttons: false,
-                pginput: false,
-                height: 300,
-                shrinkToFit: true,
 
-                //multiselect: true,
-                sortorder: "desc",
-                caption: "Orders",
 
-            });
-            $("#list").navGrid("#pager", { edit: false, add: false, del: false, search: false });
-            $("#list").navButtonAdd('#pager', {
-                caption: "",
-                buttonicon: "ui-icon-trash",
-                onClickButton: function () {
-                    var r = confirm("If you are sure that you want to delete press Ok");
-                    if (r == true) {
 
-                        var selRowId = $("#list").jqGrid('getGridParam', 'selarrrow');
+                  headertitles: true,
 
+                  pager: '#pager',
+                  sortname: 'id',
+                  multiselect: true,
+                  rowNum: 9999,
+                  viewrecords: false,
+                  pgbuttons: false,
+                  pginput: false,
+                  height: 300,
+                  shrinkToFit: true,
 
+                  //multiselect: true,
+                  sortorder: "desc",
+                  caption: "Orders",
 
-                        $.ajax({
-                            method: "POST",
-                            data: { id: selRowId.toString() },
-                            url: 'WebService.asmx/Delete3',
-                            success: function () {
-                                $("#list").trigger("reloadGrid");
-                            }
+              });
+              $("#list").navGrid("#pager", { edit: false, add: false, del: false, search: false });
+              $("#list").navButtonAdd('#pager', {
+                  caption: "",
+                  buttonicon: "ui-icon-trash",
+                  onClickButton: function () {
+                      var r = confirm("If you are sure that you want to delete press Ok");
+                      if (r == true) {
 
-                        });
+                          var selRowId = $("#list").jqGrid('getGridParam', 'selarrrow');
 
 
 
-                    } else {
+                          $.ajax({
+                              method: "POST",
+                              data: { id: selRowId.toString() },
+                              url: 'WebService.asmx/Delete3',
+                              success: function () {
+                                  $("#list").trigger("reloadGrid");
+                              }
 
-                    }
-                }
-            });
-            $("#list2").jqGrid({
-                datatype: "json",
-                mtype: 'POST',
-                postData: { id: id, name: name },
-                url: 'WebService.asmx/get_rows2',
-                colNames: ['id', 'Company', 'Phone', 'Email', 'Home_n', 'Address','amount'],
-                colModel: [
-                    { name: 'Company_', index: 'Company', width: 60, sorttype: "int", Key: true, hidden: true },
-       { name: 'Company_name', index: 'Company_name', width: 150, sorttype: "int" },
-       { name: 'Phone_number', index: 'Phone_number', width: 100, },
-              { name: 'Email', index: 'Email', width: 200 },
+                          });
 
-       { name: 'Home_number', index: 'Home_number', width: 100,  hidden: true },
-                //   		{ name: 'Expectations', index: 'Expect', width: 120, align: "right", sorttype: "float", editrules: { number: true }, editable: true },
 
-            { name: 'Address', index: 'Address', width: 400, align: "center", sorttype: "float"},
-                { name: 'amount', index: 'amount', width: 77, align: "center", sorttype: "float", editrules: { number: true }, editable: true },
-                ],
-                'cellEdit': true,
-                'cellsubmit': 'remote',
-                cellurl: 'WebService.asmx/edit_U',
-                onCellSelect: function (rowid, celname, value, iRow, iCol) {
 
-                    if (celname == 2) {
+                      } else {
 
-                        choice = rowid;
-                        document.getElementById('Label2').innerText = "" + choice;
-                        $("#osos").hide();
-                        $("#mimi").show();
-                        id = 0;
-                        $("#list").setGridParam({ postData: { id: id, name: name, u: choice } });
-                      //  choice = "";
+                      }
+                  }
+              });
+              $("#list2").jqGrid({
+                  datatype: "json",
+                  mtype: 'POST',
+                  postData: { id: id, name: name },
+                  url: 'WebService.asmx/get_rows2',
+                  colNames: ['id', 'Company', 'Phone', 'Email', 'Home_n', 'Address', 'amount'],
+                  colModel: [
+                      { name: 'Company_', index: 'Company', width: 60, sorttype: "int", Key: true, hidden: true },
+         { name: 'Company_name', index: 'Company_name', width: 150, sorttype: "int" },
+         { name: 'Phone_number', index: 'Phone_number', width: 100, },
+                { name: 'Email', index: 'Email', width: 200 },
 
-                        $("#list").trigger("reloadGrid");
+         { name: 'Home_number', index: 'Home_number', width: 100, hidden: true },
+                  //   		{ name: 'Expectations', index: 'Expect', width: 120, align: "right", sorttype: "float", editrules: { number: true }, editable: true },
 
-                    }
+              { name: 'Address', index: 'Address', width: 400, align: "center", sorttype: "float" },
+                  { name: 'amount', index: 'amount', width: 77, align: "center", sorttype: "float", editrules: { number: true }, editable: true },
+                  ],
+                  'cellEdit': true,
+                  'cellsubmit': 'remote',
+                  cellurl: 'WebService.asmx/edit_U',
+                  onCellSelect: function (rowid, celname, value, iRow, iCol) {
 
-                },
-                afterSaveCell: function (rowid, celname, value, iRow, iCol) {
+                      if (celname == 2) {
 
-                    setTimeout(function () { $("#list2").trigger("reloadGrid"); }, 1000);
+                          choice = rowid;
+                          document.getElementById('Label2').innerText = "" + choice;
+                          $("#osos").hide();
+                          $("#mimi").show();
+                          id = 0;
+                          $("#list").setGridParam({ postData: { id: id, name: name, u: choice, awb: $("#<%=TextBox14.ClientID %>").val(), uname: $("#<%=TextBox15.ClientID %>").val(), status: $("#<%=TextBox17.ClientID %>").val(), datef: $("#<%=TextBox18.ClientID %>").val(), datet: $("#<%=TextBox16.ClientID %>").val() } });
+                          //  choice = "";
 
-                },
+                          $("#list").trigger("reloadGrid");
 
+                      }
 
+                  },
+                  afterSaveCell: function (rowid, celname, value, iRow, iCol) {
 
+                      setTimeout(function () { $("#list2").trigger("reloadGrid"); }, 1000);
 
+                  },
 
 
 
 
-                headertitles: true,
 
-                pager: '#pager2',
-                sortname: 'id',
-                viewrecords: false,
-                pgbuttons: false,
-                pginput: false,
-                rowNum: 9999,
-                multiselect: true,
-                sortorder: "desc",
-                height: 300,
 
 
-                caption: "users"
 
+                  headertitles: true,
 
-            });
+                  pager: '#pager2',
+                  sortname: 'id',
+                  viewrecords: false,
+                  pgbuttons: false,
+                  pginput: false,
+                  rowNum: 9999,
+                  multiselect: true,
+                  sortorder: "desc",
+                  height: 300,
 
-            $("#list2").navGrid("#pager2", { edit: false, add: false, del: false, search: false });
-     
 
-            function checkWidth() {
-                var windowsize = $(window).width();
-                if (windowsize < 1150) {
-                    $("#options").show();
-                    $("#sidebar-wrapper").hide();
-                }
-                if (windowsize < 1000) {
-                    $("#list").showCol("show");
-                    $("#list").hideCol("Expense");
-                    $("#list").hideCol("amount");
-                    $("#list").hideCol("camount");
-                    $("#list").hideCol("samount");
-                    $("#list").hideCol("print");
-                    if (windowsize < 800) {
+                  caption: "users"
 
-                        $("#list").hideCol("name");
-                        $("#list").hideCol("M1");
-                        $("#list").hideCol("description");
-                        $("#list").hideCol("address");
 
-                    }
-                    if (windowsize < 600) {
+              });
 
-                        $("#list").hideCol("name");
-                        $("#list").hideCol("phone");
-                    }
-                }
-                if (windowsize > 600) {
-                    $("#list").showCol("name");
-                    $("#list").showCol("phone");
-                    if (windowsize > 800) {
+              $("#list2").navGrid("#pager2", { edit: false, add: false, del: false, search: false });
 
 
-                        $("#list").showCol("M1");
-                        $("#list").showCol("description");
-                        $("#list").showCol("address");
-                    }
-                    if (windowsize > 1000) {
+              function checkWidth() {
+                  var windowsize = $(window).width();
+                  if (windowsize < 1150) {
+                      $("#options").show();
+                      $("#sidebar-wrapper").hide();
+                  }
+                  if (windowsize < 1000) {
+                      $("#list").showCol("show");
+                      $("#list").hideCol("Expense");
+                      $("#list").hideCol("amount");
+                      $("#list").hideCol("camount");
+                      $("#list").hideCol("samount");
+                      $("#list").hideCol("print");
+                      if (windowsize < 800) {
 
+                          $("#list").hideCol("name");
+                          $("#list").hideCol("M1");
+                          $("#list").hideCol("description");
+                          $("#list").hideCol("address");
 
-                        $("#list").hideCol("show");
-                        $("#list").showCol("Expense");
-                        $("#list").showCol("amount");
-                        $("#list").showCol("camount");
-                        $("#list").showCol("samount");
-                        $("#list").showCol("print");
-                    }
-                    if (windowsize > 1150) {
-                        $("#options").hide();
-                        $("#sidebar-wrapper").show();
-                    }
-                }
-                $("#list").trigger("reloadGrid");
-            }
+                      }
+                      if (windowsize < 600) {
 
+                          $("#list").hideCol("name");
+                          $("#list").hideCol("phone");
+                      }
+                  }
+                  if (windowsize > 600) {
+                      $("#list").showCol("name");
+                      $("#list").showCol("phone");
+                      if (windowsize > 800) {
 
-            // Execute on load
-            checkWidth();
-            // Bind event listener
-            $(window).resize(checkWidth);
 
+                          $("#list").showCol("M1");
+                          $("#list").showCol("description");
+                          $("#list").showCol("address");
+                      }
+                      if (windowsize > 1000) {
 
-        });
+
+                          $("#list").hideCol("show");
+                          $("#list").showCol("Expense");
+                          $("#list").showCol("amount");
+                          $("#list").showCol("camount");
+                          $("#list").showCol("samount");
+                          $("#list").showCol("print");
+                      }
+                      if (windowsize > 1150) {
+                          $("#options").hide();
+                          $("#sidebar-wrapper").show();
+                      }
+                  }
+                  $("#list").trigger("reloadGrid");
+              }
+
+
+              // Execute on load
+              checkWidth();
+              // Bind event listener
+              $(window).resize(checkWidth);
+
+
+          });
 
     </script>  
    </body>

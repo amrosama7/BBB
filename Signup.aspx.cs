@@ -26,7 +26,9 @@ public partial class Signup : System.Web.UI.Page
             }
             else
             {
-                if (tkt.UserData == "cliento")
+                string s = tkt.UserData.Substring(0, 7);
+           //     string ss = tkt.UserData.Substring(7);
+                if (s == "cliento")
                 {
                     account.InnerHtml = tkt.Name;
                     account.Attributes.Add("href", "users.aspx");

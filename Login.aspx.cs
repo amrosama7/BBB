@@ -22,7 +22,8 @@ public partial class Login : System.Web.UI.Page
                 Response.Redirect("admin.aspx", true);
             else
             {
-                if (tkt.UserData == "cliento")
+                string s = tkt.UserData.Substring(0, 7);
+                if (s == "cliento")
                     Response.Redirect("users.aspx", true);
             }
             //else Response.Redirect("users.aspx", true);

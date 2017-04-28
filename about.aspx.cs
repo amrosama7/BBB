@@ -26,6 +26,7 @@ public partial class about : System.Web.UI.Page
             }
             else
             {
+                string s = tkt.UserData.Substring(0, 7);
                 if (tkt.UserData == "cliento")
                 {
                     account.InnerHtml = tkt.Name;

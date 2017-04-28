@@ -185,59 +185,293 @@ public class WebService : System.Web.Services.WebService {
 
 
         }
+    [WebMethod]
+        public void searchu(string id, string awb, string name, string status, string datef, string datet)
+        {
+
+        }
         [WebMethod]
-        public void get_rows(string id, string name,string u)
+    public void get_rows(string id, string name, string u, string awb, string uname, string status, string datef, string datet)
         {
 
 
 
             MySqlConnection sqlCnn = MySQLExecute.OpenConnection(ConfigurationManager.ConnectionStrings["connstring"].ConnectionString);
 
-            Queue queue = new Queue();
-            queue.Enqueue(new MySQLParam("@ton", name));
-            queue.Enqueue(new MySQLParam("@u", u));
-            DataTable dt_Results;
-            JQGridResults results;
+            if (datef == "" && datet == "" && name == "" && uname == "" && status == "" && awb == "")
+            {
+                Queue queue = new Queue();
+                queue.Enqueue(new MySQLParam("@ton", name));
+                queue.Enqueue(new MySQLParam("@u", u));
+                DataTable dt_Results;
+                JQGridResults results;
                 dt_Results = MySQLExecute.ExecuteReturn(sqlCnn, "CALL get_all_ship", queue);
 
 
                 sqlCnn.Close();
                 int count = dt_Results.Rows.Count;
-               results = new JQGridResults();
+                results = new JQGridResults();
                 results.rows = new JQGridRow[count];
                 int count_col = dt_Results.Columns.Count;
-               
-               
+
+
                 for (int i = 0; i < count; i++)
                 {
                     results.rows[i].id = dt_Results.Rows[i][1].ToString();
                     results.rows[i].cell = new string[count_col];
-                     // results.rows[i].cell[count_col - 1] = "<input type='button' style= 'cursor: pointer;'    onclick='add(" + dt_Results.Rows[i][0].ToString() + ")' value='show'  />";
-                     //results.rows[i].cell[count_col] = "<input type='button' style= 'cursor: pointer;'  onclick='addd(" + dt_Results.Rows[i][0].ToString() + ")' value='print'  />";
-                     //results.rows[i].cell[0] = dt_Results.Rows[i][2].ToString();
-                     //results.rows[i].cell[1] = dt_Results.Rows[i][0].ToString();
-                     //results.rows[i].cell[2] = dt_Results.Rows[i][1].ToString();
-                    
+                    // results.rows[i].cell[count_col - 1] = "<input type='button' style= 'cursor: pointer;'    onclick='add(" + dt_Results.Rows[i][0].ToString() + ")' value='show'  />";
+                    //results.rows[i].cell[count_col] = "<input type='button' style= 'cursor: pointer;'  onclick='addd(" + dt_Results.Rows[i][0].ToString() + ")' value='print'  />";
+                    //results.rows[i].cell[0] = dt_Results.Rows[i][2].ToString();
+                    //results.rows[i].cell[1] = dt_Results.Rows[i][0].ToString();
+                    //results.rows[i].cell[2] = dt_Results.Rows[i][1].ToString();
+
                     for (int j = 0; j < count_col; j++)
                     {
-                        
-                                //if (j == 7) {
-                                //    sss = double.Parse(dt_Results.Rows[i][j].ToString());
-                                //}
-                                results.rows[i].cell[j] = dt_Results.Rows[i][j].ToString();
-                            
-                        
+
+                        //if (j == 7) {
+                        //    sss = double.Parse(dt_Results.Rows[i][j].ToString());
+                        //}
+                        results.rows[i].cell[j] = dt_Results.Rows[i][j].ToString();
+
+
 
                     }
 
 
 
                 }
-            
-           
 
 
-            this.Context.Response.Write(new System.Web.Script.Serialization.JavaScriptSerializer().Serialize(results));
+
+
+                this.Context.Response.Write(new System.Web.Script.Serialization.JavaScriptSerializer().Serialize(results));
+            }
+            else
+            {
+             if (datef == "" && datet == "")
+             {
+                 Queue queue = new Queue();
+                 queue.Enqueue(new MySQLParam("@ton", name));
+                 queue.Enqueue(new MySQLParam("@u", u));
+                 queue.Enqueue(new MySQLParam("@tonu", uname));
+                 queue.Enqueue(new MySQLParam("@awbo", awb));
+
+                 queue.Enqueue(new MySQLParam("@statos", status));
+                 DataTable dt_Results;
+                 JQGridResults results;
+                 dt_Results = MySQLExecute.ExecuteReturn(sqlCnn, "CALL get_all_ship2", queue);
+
+
+                 sqlCnn.Close();
+                 int count = dt_Results.Rows.Count;
+                 results = new JQGridResults();
+                 results.rows = new JQGridRow[count];
+                 int count_col = dt_Results.Columns.Count;
+
+
+                 for (int i = 0; i < count; i++)
+                 {
+                     results.rows[i].id = dt_Results.Rows[i][1].ToString();
+                     results.rows[i].cell = new string[count_col];
+                     // results.rows[i].cell[count_col - 1] = "<input type='button' style= 'cursor: pointer;'    onclick='add(" + dt_Results.Rows[i][0].ToString() + ")' value='show'  />";
+                     //results.rows[i].cell[count_col] = "<input type='button' style= 'cursor: pointer;'  onclick='addd(" + dt_Results.Rows[i][0].ToString() + ")' value='print'  />";
+                     //results.rows[i].cell[0] = dt_Results.Rows[i][2].ToString();
+                     //results.rows[i].cell[1] = dt_Results.Rows[i][0].ToString();
+                     //results.rows[i].cell[2] = dt_Results.Rows[i][1].ToString();
+
+                     for (int j = 0; j < count_col; j++)
+                     {
+
+                         //if (j == 7) {
+                         //    sss = double.Parse(dt_Results.Rows[i][j].ToString());
+                         //}
+                         results.rows[i].cell[j] = dt_Results.Rows[i][j].ToString();
+
+
+
+                     }
+
+
+
+                 }
+
+
+
+
+                 this.Context.Response.Write(new System.Web.Script.Serialization.JavaScriptSerializer().Serialize(results));
+
+             }
+             else
+             {
+                 if (datet == "")
+                 {
+                     Queue queue = new Queue();
+                     queue.Enqueue(new MySQLParam("@ton", name));
+                     queue.Enqueue(new MySQLParam("@u", u));
+                     queue.Enqueue(new MySQLParam("@tonu", uname));
+                     queue.Enqueue(new MySQLParam("@awbo", awb));
+
+                     queue.Enqueue(new MySQLParam("@statos", status));
+                     queue.Enqueue(new MySQLParam("@datef", datef));
+                     DataTable dt_Results;
+                     JQGridResults results;
+                     dt_Results = MySQLExecute.ExecuteReturn(sqlCnn, "CALL get_all_ship3", queue);
+
+
+                     sqlCnn.Close();
+                     int count = dt_Results.Rows.Count;
+                     results = new JQGridResults();
+                     results.rows = new JQGridRow[count];
+                     int count_col = dt_Results.Columns.Count;
+
+
+                     for (int i = 0; i < count; i++)
+                     {
+                         results.rows[i].id = dt_Results.Rows[i][1].ToString();
+                         results.rows[i].cell = new string[count_col];
+                         // results.rows[i].cell[count_col - 1] = "<input type='button' style= 'cursor: pointer;'    onclick='add(" + dt_Results.Rows[i][0].ToString() + ")' value='show'  />";
+                         //results.rows[i].cell[count_col] = "<input type='button' style= 'cursor: pointer;'  onclick='addd(" + dt_Results.Rows[i][0].ToString() + ")' value='print'  />";
+                         //results.rows[i].cell[0] = dt_Results.Rows[i][2].ToString();
+                         //results.rows[i].cell[1] = dt_Results.Rows[i][0].ToString();
+                         //results.rows[i].cell[2] = dt_Results.Rows[i][1].ToString();
+
+                         for (int j = 0; j < count_col; j++)
+                         {
+
+                             //if (j == 7) {
+                             //    sss = double.Parse(dt_Results.Rows[i][j].ToString());
+                             //}
+                             results.rows[i].cell[j] = dt_Results.Rows[i][j].ToString();
+
+
+
+                         }
+
+
+
+                     }
+
+
+
+
+                     this.Context.Response.Write(new System.Web.Script.Serialization.JavaScriptSerializer().Serialize(results));
+
+                 }
+                 else
+                 {
+                     if (datef == "")
+                     {
+                         Queue queue = new Queue();
+                         queue.Enqueue(new MySQLParam("@ton", name));
+                         queue.Enqueue(new MySQLParam("@u", u));
+                         queue.Enqueue(new MySQLParam("@tonu", uname));
+                         queue.Enqueue(new MySQLParam("@awbo", awb));
+
+                         queue.Enqueue(new MySQLParam("@statos", status));
+                         queue.Enqueue(new MySQLParam("@datet", datet));
+                         DataTable dt_Results;
+                         JQGridResults results;
+                         dt_Results = MySQLExecute.ExecuteReturn(sqlCnn, "CALL get_all_ship4", queue);
+
+
+                         sqlCnn.Close();
+                         int count = dt_Results.Rows.Count;
+                         results = new JQGridResults();
+                         results.rows = new JQGridRow[count];
+                         int count_col = dt_Results.Columns.Count;
+
+
+                         for (int i = 0; i < count; i++)
+                         {
+                             results.rows[i].id = dt_Results.Rows[i][1].ToString();
+                             results.rows[i].cell = new string[count_col];
+                             // results.rows[i].cell[count_col - 1] = "<input type='button' style= 'cursor: pointer;'    onclick='add(" + dt_Results.Rows[i][0].ToString() + ")' value='show'  />";
+                             //results.rows[i].cell[count_col] = "<input type='button' style= 'cursor: pointer;'  onclick='addd(" + dt_Results.Rows[i][0].ToString() + ")' value='print'  />";
+                             //results.rows[i].cell[0] = dt_Results.Rows[i][2].ToString();
+                             //results.rows[i].cell[1] = dt_Results.Rows[i][0].ToString();
+                             //results.rows[i].cell[2] = dt_Results.Rows[i][1].ToString();
+
+                             for (int j = 0; j < count_col; j++)
+                             {
+
+                                 //if (j == 7) {
+                                 //    sss = double.Parse(dt_Results.Rows[i][j].ToString());
+                                 //}
+                                 results.rows[i].cell[j] = dt_Results.Rows[i][j].ToString();
+
+
+
+                             }
+
+
+
+                         }
+
+
+
+
+                         this.Context.Response.Write(new System.Web.Script.Serialization.JavaScriptSerializer().Serialize(results));
+
+                     }
+                     else
+                     {
+                         Queue queue = new Queue();
+                         queue.Enqueue(new MySQLParam("@ton", name));
+                         queue.Enqueue(new MySQLParam("@u", u));
+                         queue.Enqueue(new MySQLParam("@tonu", uname));
+                         queue.Enqueue(new MySQLParam("@awbo", awb));
+
+                         queue.Enqueue(new MySQLParam("@statos", status));
+                         queue.Enqueue(new MySQLParam("@datef", datef));
+                         queue.Enqueue(new MySQLParam("@datet", datet));
+                         DataTable dt_Results;
+                         JQGridResults results;
+                         dt_Results = MySQLExecute.ExecuteReturn(sqlCnn, "CALL get_all_ship5", queue);
+
+
+                         sqlCnn.Close();
+                         int count = dt_Results.Rows.Count;
+                         results = new JQGridResults();
+                         results.rows = new JQGridRow[count];
+                         int count_col = dt_Results.Columns.Count;
+
+
+                         for (int i = 0; i < count; i++)
+                         {
+                             results.rows[i].id = dt_Results.Rows[i][1].ToString();
+                             results.rows[i].cell = new string[count_col];
+                             // results.rows[i].cell[count_col - 1] = "<input type='button' style= 'cursor: pointer;'    onclick='add(" + dt_Results.Rows[i][0].ToString() + ")' value='show'  />";
+                             //results.rows[i].cell[count_col] = "<input type='button' style= 'cursor: pointer;'  onclick='addd(" + dt_Results.Rows[i][0].ToString() + ")' value='print'  />";
+                             //results.rows[i].cell[0] = dt_Results.Rows[i][2].ToString();
+                             //results.rows[i].cell[1] = dt_Results.Rows[i][0].ToString();
+                             //results.rows[i].cell[2] = dt_Results.Rows[i][1].ToString();
+
+                             for (int j = 0; j < count_col; j++)
+                             {
+
+                                 //if (j == 7) {
+                                 //    sss = double.Parse(dt_Results.Rows[i][j].ToString());
+                                 //}
+                                 results.rows[i].cell[j] = dt_Results.Rows[i][j].ToString();
+
+
+
+                             }
+
+
+
+                         }
+
+
+
+
+                         this.Context.Response.Write(new System.Web.Script.Serialization.JavaScriptSerializer().Serialize(results));
+
+                     }
+                 }
+
+             }
+            }
 
         }
         [WebMethod]
@@ -245,7 +479,7 @@ public class WebService : System.Web.Services.WebService {
         {
             MySqlConnection sqlCnn = MySQLExecute.OpenConnection(ConfigurationManager.ConnectionStrings["connstring"].ConnectionString);
             Queue queue = new Queue();
-            if (awb == "")
+            if (awb == "" || !(id.Equals("Palma",StringComparison.InvariantCultureIgnoreCase)))
             {
                 queue.Enqueue(new MySQLParam("@u", id));
 
@@ -313,49 +547,198 @@ public class WebService : System.Web.Services.WebService {
             this.Context.Response.Write(new System.Web.Script.Serialization.JavaScriptSerializer().Serialize(results));
         }
         [WebMethod]
-        public void get_u_rows(string id,string name)
+        public void get_u_rows(string id, string awb, string name, string status, string datef, string datet)
         {
 
 
             MySqlConnection sqlCnn = MySQLExecute.OpenConnection(ConfigurationManager.ConnectionStrings["connstring"].ConnectionString);
-
-            Queue queue = new Queue();
-
-            queue.Enqueue(new MySQLParam("@user", id));
-
-            queue.Enqueue(new MySQLParam("@ton", name));
-
-            DataTable dt_Results = MySQLExecute.ExecuteReturn(sqlCnn, "CALL get_user_ship", queue);
-            sqlCnn.Close();
-            int count = dt_Results.Rows.Count;
-            JQGridResults results = new JQGridResults();
-            results.rows = new JQGridRow[count];
-            int count_col = dt_Results.Columns.Count ;
-
-            for (int i = 0; i < count; i++)
+            if ( datef == "" && datet == "")
             {
-                results.rows[i].id = dt_Results.Rows[i][0].ToString();
-                results.rows[i].cell = new string[count_col];
-               
+                Queue queue = new Queue();
 
-                for (int j = 0; j < (count_col); j++)
+                queue.Enqueue(new MySQLParam("@user", id));
+
+                queue.Enqueue(new MySQLParam("@ton", name));
+                queue.Enqueue(new MySQLParam("@awbo", awb));
+
+                queue.Enqueue(new MySQLParam("@statos", status));
+
+                DataTable dt_Results = MySQLExecute.ExecuteReturn(sqlCnn, "CALL get_user_ship", queue);
+                sqlCnn.Close();
+                int count = dt_Results.Rows.Count;
+                JQGridResults results = new JQGridResults();
+                results.rows = new JQGridRow[count];
+                int count_col = dt_Results.Columns.Count;
+
+                for (int i = 0; i < count; i++)
                 {
-                    
-                           
-                        
+                    results.rows[i].id = dt_Results.Rows[i][0].ToString();
+                    results.rows[i].cell = new string[count_col];
+
+
+                    for (int j = 0; j < (count_col); j++)
+                    {
+
+
+
+                        results.rows[i].cell[j] = dt_Results.Rows[i][j].ToString();
+
+
+
+
+
+
+                    }
+                }
+
+
+
+                this.Context.Response.Write(new System.Web.Script.Serialization.JavaScriptSerializer().Serialize(results));
+
+            }
+            else
+            {
+                if ( datet == "")
+                {
+                    Queue queue = new Queue();
+
+                    queue.Enqueue(new MySQLParam("@user", id));
+
+                    queue.Enqueue(new MySQLParam("@ton", name));
+                    queue.Enqueue(new MySQLParam("@awbo", awb));
+
+                    queue.Enqueue(new MySQLParam("@statos", status));
+                    queue.Enqueue(new MySQLParam("@datef", datef));
+
+                    DataTable dt_Results = MySQLExecute.ExecuteReturn(sqlCnn, "CALL get_user_ship_search", queue);
+                    sqlCnn.Close();
+                    int count = dt_Results.Rows.Count;
+                    JQGridResults results = new JQGridResults();
+                    results.rows = new JQGridRow[count];
+                    int count_col = dt_Results.Columns.Count;
+
+                    for (int i = 0; i < count; i++)
+                    {
+                        results.rows[i].id = dt_Results.Rows[i][0].ToString();
+                        results.rows[i].cell = new string[count_col];
+
+
+                        for (int j = 0; j < (count_col); j++)
+                        {
+
+
+
                             results.rows[i].cell[j] = dt_Results.Rows[i][j].ToString();
-                    
-
-                   
 
 
+
+
+
+
+                        }
+                    }
+
+
+
+                    this.Context.Response.Write(new System.Web.Script.Serialization.JavaScriptSerializer().Serialize(results));
 
                 }
+                else
+                {
+                    if(datef == "")
+                    {
+                        Queue queue = new Queue();
+
+                        queue.Enqueue(new MySQLParam("@user", id));
+
+                        queue.Enqueue(new MySQLParam("@ton", name));
+                        queue.Enqueue(new MySQLParam("@awbo", awb));
+
+                        queue.Enqueue(new MySQLParam("@statos", status));
+                        queue.Enqueue(new MySQLParam("@datet", datet));
+
+                        DataTable dt_Results = MySQLExecute.ExecuteReturn(sqlCnn, "CALL get_user_ship_searcht", queue);
+                        sqlCnn.Close();
+                        int count = dt_Results.Rows.Count;
+                        JQGridResults results = new JQGridResults();
+                        results.rows = new JQGridRow[count];
+                        int count_col = dt_Results.Columns.Count;
+
+                        for (int i = 0; i < count; i++)
+                        {
+                            results.rows[i].id = dt_Results.Rows[i][0].ToString();
+                            results.rows[i].cell = new string[count_col];
+
+
+                            for (int j = 0; j < (count_col); j++)
+                            {
+
+
+
+                                results.rows[i].cell[j] = dt_Results.Rows[i][j].ToString();
+
+
+
+
+
+
+                            }
+                        }
+
+
+
+                        this.Context.Response.Write(new System.Web.Script.Serialization.JavaScriptSerializer().Serialize(results));
+
+                    }
+                    else
+                    {
+                        Queue queue = new Queue();
+
+                        queue.Enqueue(new MySQLParam("@user", id));
+
+                        queue.Enqueue(new MySQLParam("@ton", name));
+                        queue.Enqueue(new MySQLParam("@awbo", awb));
+
+                        queue.Enqueue(new MySQLParam("@statos", status));
+                        queue.Enqueue(new MySQLParam("@datef", datef));
+                        queue.Enqueue(new MySQLParam("@datet", datet));
+
+                        DataTable dt_Results = MySQLExecute.ExecuteReturn(sqlCnn, "CALL get_user_ship_searchtot", queue);
+                        sqlCnn.Close();
+                        int count = dt_Results.Rows.Count;
+                        JQGridResults results = new JQGridResults();
+                        results.rows = new JQGridRow[count];
+                        int count_col = dt_Results.Columns.Count;
+
+                        for (int i = 0; i < count; i++)
+                        {
+                            results.rows[i].id = dt_Results.Rows[i][0].ToString();
+                            results.rows[i].cell = new string[count_col];
+
+
+                            for (int j = 0; j < (count_col); j++)
+                            {
+
+
+
+                                results.rows[i].cell[j] = dt_Results.Rows[i][j].ToString();
+
+
+
+
+
+
+                            }
+                        }
+
+
+
+                        this.Context.Response.Write(new System.Web.Script.Serialization.JavaScriptSerializer().Serialize(results));
+
+                    }
+                }
+
             }
-
-
-            this.Context.Response.Write(new System.Web.Script.Serialization.JavaScriptSerializer().Serialize(results));
-
         }
     }
 
