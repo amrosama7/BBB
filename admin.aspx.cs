@@ -15,21 +15,21 @@ public partial class admin : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
     {
-        FormsAuthenticationTicket tkt;
-        if (Request.Cookies[".ASPXFORMSDEMO"] != null)
-        {
-            tkt = FormsAuthentication.Decrypt(Request.Cookies[".ASPXFORMSDEMO"].Value);
-            if (tkt.Name == "loadbugs" && tkt.UserData == "adminooo")
-            {
-                account.InnerHtml = "loadbugs";
-                account.Attributes.Add("href", "admin.aspx");
-            }
+        //FormsAuthenticationTicket tkt;
+        //if (Request.Cookies[".ASPXFORMSDEMO"] != null)
+        //{
+        //    tkt = FormsAuthentication.Decrypt(Request.Cookies[".ASPXFORMSDEMO"].Value);
+        //    if (tkt.Name == "loadbugs" && tkt.UserData == "adminooo")
+        //    {
+        //        account.InnerHtml = "loadbugs";
+        //        account.Attributes.Add("href", "admin.aspx");
+        //    }
 
-            else
-                Response.Redirect("Login.aspx", true);
+        //    else
+        //        Response.Redirect("Login.aspx", true);
 
-        }
-        else Response.Redirect("Login.aspx", true);
+        //}
+        //else Response.Redirect("Login.aspx", true);
 
     }
     protected void Button1_Click(object sender, EventArgs e)
