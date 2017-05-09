@@ -1,0 +1,144 @@
+
+* {
+padding : 0;
+margin : 0;
+}
+body {
+font-family : Arial, Helvetica, sans-serif;
+color : #666666;
+font-size : 12px;
+/*background-image: url('/Images/bg.jpg');*/
+background-repeat : repeat-x;
+}
+img {
+padding : 3px;
+border : 1px solid #d0660a;
+border : 1px solid #9cf449;
+}
+img.floatTL {
+float : left;
+margin-right : 7px;
+margin-bottom : 2px;
+margin-top : 12px;
+margin-left : 10px;
+}
+#wrapper {
+width : 1350px;
+margin : 0 auto;
+}
+#navbar {
+background-color : #99ff34;
+margin-top : 10px;
+}
+#navbar ul {
+margin : 0;
+padding : 0;
+list-style : none;
+margin-left : 50px;
+}
+#navbar li {
+display : inline;
+}
+#navbar a {
+text-transform : uppercase;
+text-decoration : none;
+font-size : 12px;
+font-weight : bold;
+padding : 5px 10px 5px 10px;
+color : #656565;
+}
+#navbar a:hover {
+color : #ffd;
+padding : 5px 10px 5px 10px;
+}
+#header {
+height : 100px;
+background-color : #fff;
+border-radius: 10px;
+}
+#header h1#lineone {
+font-size : 1.7em;
+font-weight : lighter;
+font-family : helvetica, arial, sans-serif;
+padding-top : 10px;
+padding-left : 5px;
+color : #99ff32;
+border : none;
+top : 0;
+left : 14px;
+letter-spacing : -1px;
+}
+#header h1#lineone span {
+color : #7e7e7e;
+}
+#header h2#linetwo {
+padding-left : 5px;
+font-size : 0.9em;
+font-family : helvetica, arial, sans-serif;
+text-transform : none;
+top : 25px;
+left : 14px;
+color : #7e7e7e;
+}
+.content {
+margin-top : 15px;
+}
+.content p {
+color : #274563;
+line-height : 1.6em;
+letter-spacing : 0.05em;
+padding : 0 16px 8px 16px;
+}
+.content a {
+color : #99ff31;
+}
+.content_right {
+margin : 0 auto;
+display : inline;
+float : right;
+width : 255px;
+text-align : justify;
+margin-right : 5px;
+padding-left : 5px;
+padding-bottom : 5px;
+padding-right : 5px;
+padding-top : 2px;
+line-height : 1.5em;
+}
+.content_left {
+margin : 0 auto;
+padding : 5px;
+display : inline;
+float : left;
+width : 255px;
+text-align : justify;
+line-height : 1.5em;
+}
+.content_left h3 {
+padding-left : 5px;
+font-size : 1.2em;
+margin-bottom : 5px;
+font-family : Arial, Helvetica, sans-serif;
+color : #99ff33;
+}
+.content_right h3 {
+font-size : 1.2em;
+margin-bottom : 2px;
+margin-top : 5px;
+font-family : Arial, Helvetica, sans-serif;
+color : #99ff33;
+}
+#footer {
+background-color : #7e7e7f;
+display : inline;
+float : left;
+width : 100%;
+text-align : center;
+}
+#footer p {
+padding : 5px;
+color : #ffe;
+}
+#footer a {
+color : #99ff32;
+}
