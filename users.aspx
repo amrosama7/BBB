@@ -174,8 +174,10 @@
             <div style="width:100%;"><br /></div>
           </div>
             
+
           <div class="s-12 m-4 l-4">
             <ul class="top-bar-social center">
+
                <li><a href="contact.aspx" target='_blank'><i class="icon-smartphone hoverBlack"  title="01019267245"></i></a> </li>
                                                                                    <li><a href="contact.aspx" target='_blank'><i class="icon-mail" style ="color: orange !important"  title="loadbugs@gmail.com"></i></a> </li>
 
@@ -188,6 +190,7 @@
               </ul>
           </div>
 
+
           <div class="s-12 m-4 l-4">
             <div class="links">
                 <asp:Button ID="Button5" CssClass="signout pointer" runat="server" OnClick="Button1_Click" Text="Account" />
@@ -195,11 +198,14 @@
             </div>
           </div>
 
+
         </div>
       </div>
       
       <!-- Top Navigation -->
+
       <nav class="background-white background-primary-hightlight boxShadow">
+
         <div class="line">
           <div class="s-12 l-2 logofont">
              <a href="" class="logo"><img src="img/logo.jpg" alt=""></a>

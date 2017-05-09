@@ -33,9 +33,11 @@
               <p class="text-size-12">Contact Us: 01019267245 | <a class="text-orange-hover" href="mailto:loadbugs@gmail.com">loadbugs@gmail.com</a></p>
             </div>
           </div>--%>
+
           <div class="s-12 m-12 l-12">
             <ul class="top-bar-social center">
                <li><a href="contact.aspx" target='_blank'><i class="icon-smartphone hoverBlack"  title="01019267245"></i></a> </li>
+
                                                                                    <li><a href="contact.aspx" target='_blank'><i class="icon-mail" style ="color: orange !important"  title="loadbugs@gmail.com"></i></a> </li>
 
 
@@ -45,16 +47,20 @@
                    <li><a href="" target='_blank'><i class="icon-linked_in " style ="color: #0077B5 !important"  title="LinkedIn"></i></a> </li>
 
               </ul>
+
           </div>
+
 
         </div>
       </div>
       
       <!-- Top Navigation -->
+
       <nav class="background-white background-primary-hightlight boxShadow">
         <div class="line">
           <div class="s-12 l-2 logofont">
             <a href="" class="logo"><img src="img/logo.jpg" alt=""/></a>
+
           </div>
           <div class="top-nav s-12 l-10">
             <p class="nav-text"></p>
@@ -62,7 +68,9 @@
               <li><a href="/" class="marginLeft2">Home</a></li>
               <li><a href="contact.aspx" class="marginLeft2">Contact Us</a></li>
               <li><a href="about.aspx" class="marginLeft2">About</a></li>
+
               <li><a runat="server" id="account" href="Login.aspx" class="marginLeft2 active">Order</a></li>
+
             </ul>
           </div>
         </div>
@@ -75,6 +83,7 @@
         <div class="">
             <label for="TextBox1" id="mess" runat="server" style="display: none !important;" class="display-block font14 marginBottom5 marginTop5 red center">Failed to signup !</label>
             <label for="TextBox4" class="display-block font14 marginBottom5 marginTop5">Code</label>
+
             <asp:TextBox ID="TextBox4" TabIndex="1" runat="server" class="noBoxShadow display-block marginBottom15 width100 input"></asp:TextBox>
               <label for="TextBox9" class="display-block font14 marginBottom5 marginTop5">Initials maximum 4 characters</label>
             <asp:TextBox ID="TextBox9" runat="server" class="noBoxShadow display-block marginBottom15 width100 input"></asp:TextBox>
@@ -94,6 +103,7 @@
             <asp:TextBox ID="TextBox2"  TabIndex="7" type ="password" runat="server" class="noBoxShadow display-block marginBottom15 width100 input"></asp:TextBox>
             <label for="TextBox3" class="display-block font14 marginBottom5 marginTop5">Confirm Password</label>
             <asp:TextBox ID="TextBox3" TabIndex="8" type="password" runat="server" class="noBoxShadow display-block marginBottom15 width100 input"></asp:TextBox>
+
             <asp:Button ID="Button1" runat="server" Text="Sign Up" OnClick="Button1_Click" class="button" />
         </div>
         </form>

@@ -1,3 +1,4 @@
+
 ﻿$(document).ready(function () {
 
     var $close = $(".close");
@@ -64,6 +65,7 @@
         $(".boxSearch").hide();
         $(".boxPass").hide();
     });
+
 
 
 

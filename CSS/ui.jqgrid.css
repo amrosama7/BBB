@@ -1,10 +1,14 @@
 /*Grid*/
+<<<<<<< HEAD
 .ui-jqgrid {position: absolute;
     left: 0;
     right: 0;
     margin: auto;
     box-shadow: 1px 1px 1px #7d658a;
 }
+=======
+.ui-jqgrid {position: relative;}
+>>>>>>> fc29513b3822cb5ddfc98958171347644685a14a
 .ui-jqgrid .ui-jqgrid-view {position: relative;left:0; top: 0; padding: 0; font-size:11px;}
 /* caption*/
 .ui-jqgrid .ui-jqgrid-titlebar {padding: .3em .2em .2em .3em; position: relative; font-size: 12px; border-left: 0 none;border-right: 0 none; border-top: 0 none;}

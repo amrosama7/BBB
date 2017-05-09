@@ -139,7 +139,9 @@ nav {
   display:block;
   font-size:1rem;
   padding:1.25rem; 
+
   border-radius: 4px;
+
 }
 .top-nav li ul li a {
   background:none repeat scroll 0 0 #152732;

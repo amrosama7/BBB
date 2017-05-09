@@ -143,8 +143,10 @@
             <div style="width:100%;"><br /></div>
           </div>
             
+
           <div class="s-12 m-4 l-4">
             <ul class="top-bar-social center">
+
                <li><a href="contact.aspx" target='_blank'><i class="icon-smartphone hoverBlack"  title="01019267245"></i></a> </li>
                                                                                    <li><a href="contact.aspx" target='_blank'><i class="icon-mail" style ="color: orange !important"  title="loadbugs@gmail.com"></i></a> </li>
 
@@ -157,12 +159,14 @@
               </ul>
           </div>
 
+
           <div class="s-12 m-4 l-4">
             <div class="links">
                 <asp:Button ID="Button5" CssClass="signout pointer" runat="server" OnClick="Button1_Click" Text="Account" />
                 <asp:Button ID="Button6" CssClass="signout pointer" runat="server" OnClick="Button1_Click" Text="SignOut" />
             </div>
           </div>
+
 
         </div>
       </div>
@@ -183,6 +187,7 @@
             </ul>
           </div>
         </div>
+
       </nav>
 
       <%--<div class="alignLeft background-white background-primary-hightlight textWhite bar options boxShadow">
@@ -195,10 +200,12 @@
             <div id="password" class="inlineBlock hoverGreen height56 verAlign width30p center">Change Password</div>
         </div>  --%>
 
+
     </header>
       
      <div>
         <br />
+
          <div class="position-relative height65 priv">
                 <div class="flex spaceBetween">
                     <div class="inlineBlock position-relative">
@@ -216,8 +223,8 @@
                     <div class="newOrderBtn inlineBlock width15"><asp:Button ID="Button3" OnClick="Button3_Click" class="pointer"  runat="server" Text="Download"/> </div>
                 </div>
             </div>
-        <div id="mimi" class="hamada" style="height: 390px; max-width: 1200px; " >
-            
+        <div id="mimi" class="hamada" style="height: 390px;" >
+
             <table id="list" style="overflow-x: auto;">
                 <tr>
                     <td />
@@ -242,7 +249,7 @@
          <div id="pager2"></div>
     </div>
     
-    
+
           </form>
 
     <script type="text/javascript" src="Scripts/responsee.js"></script>

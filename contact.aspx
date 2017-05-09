@@ -32,11 +32,13 @@
               <p class="text-size-12">Contact Us: 01019267245  | <a class="text-orange-hover" href="mailto:loadbugs@gmail.com">loadbugs@gmail.com</a></p>
             </div>
           </div>--%>
+
           
             
           <div class="s-12 m-12 l-12">
             <ul class="top-bar-social center">
                <li><a href="contact.aspx" target='_blank'><i class="icon-smartphone hoverBlack"  title="01019267245"></i></a> </li>
+
                                                                                    <li><a href="contact.aspx" target='_blank'><i class="icon-mail" style ="color: orange !important"  title="loadbugs@gmail.com"></i></a> </li>
 
 
@@ -44,6 +46,7 @@
                 <li><a href="https://www.instagram.com/loadbugs/" target='_blank'><i class="icon-instagram hoverBlack" title="Instagram"></i></a> </li>
                                                     <li><a href="https://twitter.com/loadbugs" target='_blank'><i class="icon-twitter" style ="color: #0084b4 !important" title="twitter"></i></a> </li>
                    <li><a href="" target='_blank'><i class="icon-linked_in " style ="color: #0077B5 !important"  title="LinkedIn"></i></a> </li>
+
 
               </ul>
           </div>
@@ -57,6 +60,7 @@
         <div class="line">
           <div class="s-12 l-2 logofont">
   <a href="" class="logo"><img src="img/logo.jpg" alt=""/></a>             
+
           </div>
           <div class="top-nav s-12 l-10">
             <p class="nav-text"></p>
